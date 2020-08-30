@@ -2,7 +2,8 @@ package com.atguigu.demo;
 
 
 public class SingletonDemo {
-    private static SingletonDemo instance = null;
+	//禁止指令重排
+    private static volatile SingletonDemo instance = null;
     private SingletonDemo(){
         System.out.println(Thread.currentThread().getName()+"\t 我是构造函数SingletonDemo（）");
     }
