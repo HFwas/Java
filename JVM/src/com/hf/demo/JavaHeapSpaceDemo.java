@@ -10,5 +10,6 @@ public class JavaHeapSpaceDemo {
             str += str + new Random().nextInt(1111111) + new Random().nextInt(222222);
             str.intern();
         }
+        //Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
     }
 }
