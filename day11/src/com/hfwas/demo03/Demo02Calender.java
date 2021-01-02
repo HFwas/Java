@@ -1,5 +1,7 @@
 package com.hfwas.demo03;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -25,8 +27,25 @@ import java.util.Date;
  */
 public class Demo02Calender {
 
-    public static void main(String[] args) {
-        demo01();
+    public static void main(String[] args) throws ParseException {
+//        demo01();
+        demo03();
+
+        Date date = new Date();
+        //2021-1-1 23:07:54
+        //这个方法过时了
+        //System.out.println(date.toLocaleString());
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy年-MM月-dd日 HH小时-mm分钟-ss秒");
+        String s = sdf.format(date);
+        //2021年-01月-01日 23小时-12分钟-31秒
+        System.out.println(s);
+
+        String time = "2021年-1月-1日 12小时-45分钟-45秒";
+        Date parse = sdf.parse(time);
+        //Fri Jan 01 12:45:45 CST 2021
+        System.out.println(parse);
+
     }
 
     /*
@@ -61,14 +80,17 @@ public class Demo02Calender {
 
 
         int year = c.get(Calendar.YEAR);
+        //2022
         System.out.println(year);
 
         int month = c.get(Calendar.MONTH);
         //西方的月份0-11 东方:1-12
+        //9
         System.out.println(month);
 
         //int date = c.get(Calendar.DAY_OF_MONTH);
         int date = c.get(Calendar.DATE);
+        //1
         System.out.println(date);
     }
 
