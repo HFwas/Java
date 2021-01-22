@@ -589,6 +589,89 @@ Java7中增加的动态语言类型支持的本质是对Java虚拟机规范的�
 - 一个方法在正常调用完成之后，究竟需要使用哪一个返回指令，还需要根据方法返回值的实际数据类型而定。
 - 在字节码指令中，返回指令包含ireturn（当返回值是boolean，byte，char，short和int类型时使用），lreturn（Long类型），freturn（Float类型），dreturn（Double类型），areturn。另外还有一个return指令声明为void的方法，实例初始化方法，类和接口的初始化方法使用。
 
+代码演示：
+
+```java
+/**
+ * @Author: HFwas
+ * @Date: 2021/1/22
+ * @Description: com.hfwas.java.chapter05
+ * 方法返回地址
+ * 在字节码指令中，返回指令包含ireturn（当返回值是boolean，byte，char，short和int类型时使用），
+ * lreturn（Long类型），freturn（Float类型），dreturn（Double类型），areturn。
+ * 另外还有一个return指令声明为void的方法，实例初始化方法，类和接口的初始化方法使用。
+ * @version: 1.0
+ */
+public class ReturnAddressTest {
+    public boolean methodBoolean(){
+        return false;
+    }
+
+    public byte methodByte(){
+        return 0;
+    }
+
+    public short methodShort(){
+        return 0;
+    }
+
+    public char methodChar(){
+        return 'a';
+    }
+
+    public int methodInt(){
+        return 0;
+    }
+
+    public long methodLong(){
+        return 2L;
+    }
+
+    public float methodFloat(){
+        return 1;
+    }
+
+    public double methodDouble(){
+        return 0.0;
+    }
+
+    public String methodString(){
+        return null;
+    }
+
+    public Date methodDate(){
+        return null;
+    }
+
+    public void methodVoid(){
+
+    }
+
+    static {
+        int i = 10;
+    }
+
+    public void method02(){
+        try {
+            method01();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void method01() throws IOException {
+        FileReader fr = new FileReader("hfwas.txt");
+        char[] chars = new char[1024];
+        int length;
+        while ((length = fr.read(chars)) != -1) {
+            String s = new String(chars, 0, length);
+            System.out.println(s);
+        }
+        fr.close();
+    }
+}
+```
+
 在方法执行过程中遇到异常（Exception），并且这个异常没有在方法内进行处理，也就是只要在本方法的异常表中没有搜索到匹配的异常处理器，就会导致方法退出，简称异常完成出口。
 
 方法执行过程中，抛出异常时的异常处理，存储在一个异常处理表，方便在发生异常的时候找到处理异常的代码
