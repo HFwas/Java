@@ -7,8 +7,8 @@ package java.lang;
  * 自定义的string类
  * @version: 1.0
  */
-public class String {
-    static {
-        System.out.println("自定义的string类的静态代码块");
-    }
-}
+//public class String {
+//    static {
+//        System.out.println("自定义的string类的静态代码块");
+//    }
+//}
