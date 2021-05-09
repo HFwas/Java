@@ -132,7 +132,7 @@ Docker镜像(lmage)就是-一个只读的模板。镜像可以用来创建Docker
 
 #### 容器( container)
 
-Docker利用容器(Container) 独立运行的一个或一组应用。**容器是用镜像创建的运行实例。** 它可以被启动、开始、停止、删除。每个容器都是相互隔离的、保证安全的平台。 **可以把容器看做是一个简 易版的Linux环境**(包括root用户权限、进程空间、用户空间和网络空间等)和运行在其中的应用程序。 容器的定义和镜像几乎一模一样，也是一堆层的统一视角， 唯- -区别在于容器的最上面那-层是可读可写的。
+Docker利用容器(Container) 独立运行的一个或一组应用。**容器是用镜像创建的运行实例。** 它可以被启动、开始、停止、删除。每个容器都是相互隔离的、保证安全的平台。 **可以把容器看做是一个简易版的Linux环境**(包括root用户权限、进程空间、用户空间和网络空间等)和运行在其中的应用程序。 容器的定义和镜像几乎一模一样，也是一堆层的统一视角， 唯一区别在于容器的最上面那-层是可读可写的。
 
 #### 仓库( repository)
 
@@ -229,7 +229,8 @@ Docker是一个Client-Server结构的系统，Docker守护进程运行在主机�
 #### 为什么Docker比较比vm快
 
 1. **docker**有着比虚拟机更少的抽象层。由亍docker不需要**Hypervisor**实现硬件资源虚拟化,运行在docker容器上的程序直接使用的都是实际物理机的硬件资源。因此在CPU、内存利用率上docker将会在效率上有明显优势。 
-2. **docker**利用的是宿主机的内核,而不需要**Guest OS**。因此,当新建一个 容器时,docker不需要和虚拟机一样 重新加载- - 个操作系统内核仍而避免引寻、加载操作系统内核返个比较费时费资源的过程,当新建--个虚拟机时,虚拟机软件需要加载GuestOS,返个新建过程是分钟级别的。而docker由于直接利用宿主机的操作系统,则省略了返个过程,因此新建一-个docker容器只需要几秒钟。
+2. **docker**利用的是宿主机的内核,而不需要**Guest OS**。因此,当新建一个 容器时,docker不需要和虚拟机一样 重新加载一个操作系统内核仍而避免引寻、加载操作系统内核是个比较费时费资源的过程,当新建一个虚拟机时,虚拟机软件需要加载GuestOS,返个新建过程是分钟级别的。而docker由于直接利用宿主机的操作系统,则省略了这个
+3. 过程,因此新建一-个docker容器只需要几秒钟。
 
 ![image-20210505163848557](asserts/image-20210505163848557.png)
 
@@ -294,6 +295,8 @@ SIZE：镜像大小
 
  docker pull 镜像名字[:TAG]
 
+
+
 #### docker rmi 某个XXX镜像的名字ID
 
  删除镜像
@@ -312,9 +315,9 @@ SIZE：镜像大小
 
 #### 新建并启动容器
 
- docker run [OPTIONS] IMAGE [COMMAND][ARG]
+ docker run [OPTIONS] **IMAGE** [COMMAND][ARG]
 
- OPTIONS 说明
+#####  OPTIONS 说明
 
 ```
 OPTIONS说明(常用) :有些是一个减号，有些是两个减号
@@ -330,7 +333,13 @@ OPTIONS说明(常用) :有些是一个减号，有些是两个减号
 	containerPort
 ```
 
+##### 启动交互式容器：
 
+![image-20210509181957303](asserts/image-20210509181957303.png)
+
+#使用镜像 centos:latest以交互模式启动一个容器，在容器内执行/bin/bash命令。
+
+docker run -it centos /bin/bash
 
 #### 列出当前所有**正在运行**的容器
 
@@ -387,9 +396,15 @@ docker rm 容器ID -f
 
 问题:然后docker ps -a进行查看,**会发现容器已经退出** 很重要的要说明的一点: **Docker容器后台运行,就必须有一个前台进程.** 容器运行的命令如果不是那些**一直挂起的命令** (比如运行top，tail) ，就是会自动退出的。 这个是**docker**的机制问题,比如你的web容器，我们以**nginx**为例，正常情况下,我们配置启动服务只需要启动响应的**service**即可。例如 service nginx start 但是,这样做,**nginx**为后台进程模式运行,就导致**docker**前台没有运行的应用,这样的容器后台启动后，会立即自杀因为他觉得他没事可做了.所以，最佳的解决方案是将你要运行的程序以前台进程的形式运行
 
+![image-20210509181327404](asserts/image-20210509181327404.png)
+
 #### 查看容器日志
 
 docker logs -f -t --tail 容器ID
+
+docker run -d centos /bin/bash -c "while true;do echo hello zzz;sleep 2;done"
+
+![image-20210509182229149](asserts/image-20210509182229149.png)
 
  -t 是加入时间戳
 
@@ -397,39 +412,109 @@ docker logs -f -t --tail 容器ID
 
  --tail 数字显示最后多少条
 
+![image-20210509182646056](asserts/image-20210509182646056.png)
+
 #### 查看容器内的进程
 
 docker top 容器ID
+
+![image-20210509182926134](asserts/image-20210509182926134.png)
 
 #### 查看容器内部细节
 
 docker inspect 容器ID
 
+![image-20210509183122326](asserts/image-20210509183122326.png)
+
 #### 进入正在运行的容器并以命令行交互
 
-docker exec -it 容器ID bashShell
+##### docker exec -it 容器ID bashShell
 
 ![image-20210505191732829](asserts/image-20210505191732829.png)
 
-重新进入docker attach 容器ID
+![image-20210509183548702](asserts/image-20210509183548702.png)
 
-上述两个区别
+##### 重新进入docker attach 容器ID
+
+![image-20210509183714712](asserts/image-20210509183714712.png)
+
+##### 上述两个区别
 
 attach 直接进入容器启动命令的终端，不会启动新的进程
 
-exec 实在容器中打开新的终端，并且可以穷的那个新的进程
+exec 实在容器中打开新的终端，并且可以启动新的进程
+
+![image-20210509183911125](asserts/image-20210509183911125.png)
 
 #### 从容器内拷贝文件到主机上
 
 docker cp 容器ID:容器内路径 目的主机路径
 
-
+![image-20210509184636768](asserts/image-20210509184636768.png)
 
 ### 小总结
 
+![image-20210509184750361](asserts/image-20210509184750361.png)
 
+![image-20210509184818394](asserts/image-20210509184818394.png)
 
+```
+attach Attach to a running container
+#当前she！下 attach连按指定运行镜像
+build Build an image from a dockerfile
+#通过 Dockerfile定制镜像
+commit Create a new image from a container changes
+#提交当前容器为新的镜像
+cp Copy files/ folders from the containers filesystem to the host path
+#从容器中拷贝指定文件或者目录到宿主机中
+create Create a new container
+#创建一个新的容器，同run，但不启动容器
+diff Inspect changes on a container's filesystem
+#查看 docker容器变化
+events Get real time events from the server
+#从 docker服务获取容器实时事件
+exec Run a command in an existing container
+#在已存在的容器上运行命令
+export Stream the contents of a container as a tar archive
+#导出容器的内容流作为一个tar归档文件【对应 import】
+history Show the history of an image
+#展示一个镜像形成历史
+images  List images
+#列出系统当前镜像
+import  Create a new filesystem image from the contents of a tarb
+#并从tar包中的内容创建一个新的文件系统映像对应expo 
+info       Display system-wide information
+#显示系统相关信息
 
+push Push an image or a repository to the docker registry server
+#推送指定镜像或者库镜像至 docker源服务器
+restart Restart a running container
+#重启运行的容器
+rm Remove one or more containers
+#移除一个或者多个容器
+rmi Remove one or more images
+#移除一个或多个镜像【无容器使用该镜像才可删除，否则需删除相关容器才可继续或-f强制删除】
+run Run a command in a new container
+#创建一个新的容器并运行一个命令
+save save an image to a tar archiv
+#保存一个镜像为一个tar包对应load】
+search Search for an image on the Docker Hub
+#在 docker hub中搜索镜像
+start Start a stopped containers
+#启动容器
+top Stop a running containers
+#停止容器
+tag Tag an image into a repository
+#给源中镜像打标签
+top Lookup the running processes of a container
+#查看容器中运行的进程信息
+unpauseUnpause a paused container
+#取消暂停容器
+version Show the docker version information
+#查看 docker版本号
+wait Block until a container stops，。 then print its exit code
+#截取容器停止时的退出状态值
+```
 
 # 第 四 章 Docker 镜像
 
@@ -439,7 +524,9 @@ docker cp 容器ID:容器内路径 目的主机路径
 
 ### UnionFS(联合文件系统)
 
-UnionFS (状节又件示统) UnionFS (联合文件系统) : Union文件系统(UnionFS)是一一种分层、轻量级并且高性能的文件系统，它支持对文件系统的修作为一 次提交来一层层的叠加，同时可以将不同目录挂载到同一个虚拟文件系统下(unite several directories into a singlevirtualfilesystem)。Union文件系统是Docker镜像的基础。镜像可以通过分层来进行继承，基于基础镜像(没有父镜像)可以制作各种具.体的应用镜像。
+UnionFS (状节又件示统) UnionFS (联合文件系统) : Union文件系统(UnionFS)是一一种分层、轻量级并且高性能的文件系统，它支持对文件系统的修作为**一 次提交来一层层的叠加**，同时可以将不同目录挂载到同一个虚拟文件系统下(unite several directories into a singlevirtualfilesystem)。Union文件系统是Docker镜像的基础。镜像可以通过分层来进行继承，基于基础镜像(没有父镜像)可以制作各种具.体的应用镜像。
+
+![image-20210509185630765](asserts/image-20210509185630765.png)
 
 特性:一次同时加载多个文件系统，但从外面看起来，只能看到一个文件系统，联合加载会把各层文件系统叠加起来，这样最终的文 件系统会包含所有底层的文件和目录
 
@@ -447,25 +534,27 @@ UnionFS (状节又件示统) UnionFS (联合文件系统) : Union文件系统(Un
 
 **Docker镜像加载原理:** **docker**的镜像实际上由一层一层的文件系统组成，这种层级的文件系统**UnionFS。**
 
-**botfs(boot file system)\**主要包含\**bootloader**和**kernel**, **bootloader**主 要是引导加载**kernel**, **Linux**刚启动时会加载bootfs文件系统，在**Docker**镜像的最底层是**bootfs**。这一-层与我们典型的**Linux/Unix**系统是- - -样的，包含boot加载器和内核。当boot加载完成之 后整个内核就都在内存中了，此时内存的使用权己由bootfs转交给内核，此时系统也会卸载bootfs。
+**botfs(boot file system)\**主要包含\**bootloader**和**kernel**, **bootloader**主 要是引导加载**kernel**, **Linux**刚启动时会加载bootfs文件系统，**在Docker镜像的最底层是bootfs**。这一-层与我们典型的**Linux/Unix**系统是- - -样的，包含boot加载器和内核。当boot加载完成之 后整个内核就都在内存中了，此时内存的使用权己由bootfs转交给内核，此时系统也会卸载bootfs。
 
 **rootfs (root file system)，\**在\**bootfs**之 上。 包含的就是典型Linux系统中的**/dev, /proc, /bin, /etc**等标准目录和文件。\**rootfs\**就 是各种不同的操作系统发行版，比如**Ubuntu**，**Centos**等等。
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_13-38-28.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_13-38-28.png)
+![image-20210509185837092](asserts/image-20210509185837092.png)
 
 平时我们安装的虚拟机的Centos都是好几个G ，为什么docker这里才要200m
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/QQ%E6%88%AA%E5%9B%BE20201003133908.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/QQ截图20201003133908.png)
+![image-20210509185850906](asserts/image-20210509185850906.png)
 
 对于一个精简的**OS, rootfs**可 以很小，只需要包括最基本的命令、工具和程序库就可以了，因为底层直接用**Host**的**kernel**,自只需要提供rootfs就行了。由此可见对于不同的**linux**发行版, **bootfs**基本是一致的, **rootfs**会有差别，因此不同的发行版可以公用**bootfs**。
 
 ### 分层的镜像
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_13-40-06.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_13-40-06.png)
+以我们的pull为例，在下载的过程当中我们可以看到docker的景象好像在一层一层的下载
+
+![image-20210509190148375](asserts/image-20210509190148375.png)
 
 ### 分层的镜像
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_14-02-22.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_14-02-22.png)
+
 
 ### 为什么 Docker纪念馆想要采用这种分层结构
 
@@ -485,7 +574,7 @@ docker commit -m="提交的描述信息" -a="作者" 容器ID 要创建的目标
 
 1、从Hub上下载tomcat镜像到本地并成功运行
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_14-26-27.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_14-26-27.png)
+![image-20210509192013237](asserts/image-20210509192013237.png)
 
 docker run -d -p 8080:8080 tomcat
 
@@ -498,17 +587,23 @@ t:终端
 
 2、故意删除上一步镜像生产tomcat容器的文档
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_14-28-22.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_14-28-22.png)
+![image-20210509192149336](asserts/image-20210509192149336.png)
 
 3、也即当前的tomcat运行实例是一个没有文档内容的容器，以他为模板commit一个没有doc的tomcat新镜像 atguigu/tomcat02
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_14-29-38.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_14-29-38.png)
+![image-20210509192709610](asserts/image-20210509192709610.png)
 
 4、启动我们的新镜像并和原来的对比
 
  启动atuigu/tomcat02 没有doc
 
+![image-20210509193012491](asserts/image-20210509193012491.png)
+
  启动原来tomcat他有doc
+
+![image-20210509193023882](asserts/image-20210509193023882.png)
+
+
 
 # 第 五 章 Docker容器数据卷
 
@@ -522,7 +617,12 @@ t:终端
 
 卷就是目录或文件，存在于一个或多个容器中，由**docker**挂载到容器，但不属于联合文件系统，因此能够绕过Union FileSystem提供一些用 于持续存储或共享数据的特性: 卷的设计目的就是数据的持久化，完全独立于容器的生存周期，因此Docker不 会在容器删除时删除其挂载的数据卷
 
-特点: 1:数据卷可在容器之间共享或重用数据 2:卷中的更改可以直接生效 3:数据卷中的更改不会包含在镜像的更新中 4:数据卷的生命周期一直持续到没有容器使用它为止
+特点: 
+
+1. 数据卷可在容器之间共享或重用数据 
+2. 卷中的更改可以直接生效
+3. 数据卷中的更改不会包含在镜像的更新中 
+4. 数据卷的生命周期一直持续到没有容器使用它为止
 
 **容器的持久化**
 
@@ -534,27 +634,41 @@ t:终端
 
 #### 直接命令添加
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_15-30-44.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_15-30-44.png)
+![image-20210509200234511](asserts/image-20210509200234511.png)
 
 docker run -it -v /宿主机绝对路径目录:/容器内目录 镜像名
 
+docker run -it -v /mydataVolume:/dataVolumeContainer centos
+
 查看数据卷是否挂载成功
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_15-31-52.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_15-31-52.png)
+![image-20210509202145899](asserts/image-20210509202145899.png)
+
+![image-20210509202218274](asserts/image-20210509202218274.png)
 
 容器和宿主机之间数据共享
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_15-32-19.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_15-32-19.png)
+主机：
+
+![image-20210509202644073](asserts/image-20210509202644073.png)
+
+容器：
+
+![image-20210509202710569](asserts/image-20210509202710569.png)
+
+![image-20210509202744433](asserts/image-20210509202744433.png)
 
 容器停止退出后，主机修改后的数据是否同步
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_15-33-03.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_15-33-03.png)
+![image-20210509203009513](asserts/image-20210509203009513.png)
 
 命令(带权限)
 
  docker run -it -v /宿主机绝对路径目录:/容器内目录**:ro** 镜像名
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_15-33-49.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_15-33-49.png)
+ro:只读，主机中创建文件，可以写文件，但是容器内不能写，只能读取文件
+
+
 
 #### DockerFile添加
 
@@ -562,29 +676,44 @@ docker run -it -v /宿主机绝对路径目录:/容器内目录 镜像名
 
 可在Dockerfile中使用VOLUME指令来给镜像添加一个或多个数据卷
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_15-35-17.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_15-35-17.png)
+VOLUME["/dataVolumeContainer", "/dataVolumeContainer2", "/dataVolumeContainer3"]
+
+说明：
+
+出于可移植和分享的考虑，用-v主机目录：容器目录这种方法不能够直接在 Dockerfile中实现。
+由于宿主机目录是依赖于特定宿主机的，并不能够保证在所有的宿主机上都存在这样的特定目录。
 
 File构建
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_15-35-37.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_15-35-37.png)
+```
+#t volume test 
+FROM centos 
+VOLUME ["/dataVolumeContainer1","/dataVolumeContainer2"]
+CMD echo "finished,--------success1"
+CMD /bin/bash
+```
 
 build后生成镜像
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_15-36-01.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_15-36-01.png)
+![image-20210509204920608](asserts/image-20210509204920608.png)
 
 获得一个新镜像zzyy/centos
 
+![image-20210509205227515](asserts/image-20210509205227515.png)
+
 run容器
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_15-36-31.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_15-36-31.png)
+![image-20210509205943248](asserts/image-20210509205943248.png)
 
 通过上述步骤，容器内的卷目录地址已经知道，对应的主机目录在哪
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_15-37-05.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_15-37-05.png)
+![image-20210509210030585](asserts/image-20210509210030585.png)
+
+![image-20210509210103394](asserts/image-20210509210103394.png)
 
 **主机对应默认地址**
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_15-37-22.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_15-37-22.png)
+![image-20210509210107794](asserts/image-20210509210107794.png)
 
 备注
 
@@ -610,7 +739,7 @@ Docker挂载主机目录Docker访问出现cannot open directory . Permission den
 
 #### 先启动一个父容器doc1
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_15-40-46.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_15-40-46.png)
+
 
 启动后在 dataVolumeContainer1中新增内容
 
@@ -618,29 +747,29 @@ Docker挂载主机目录Docker访问出现cannot open directory . Permission den
 
  **--volumes -from**
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_15-41-51.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_15-41-51.png)
+
 
 doc2/doc3 分别在dataVolumeContainer2各自新增内容
 
 #### 回到doc1可以看到02/03各自添加的都能共享了
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_15-42-46.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_15-42-46.png)
+
 
 #### 删除doc1 doc2修改后doc3是否可以访问
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_15-43-31.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_15-43-31.png)
+
 
 #### 删除doc02后doc3是否访问
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_15-43-57.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_15-43-57.png)
+
 
 在进一步
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_15-44-11.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_15-44-11.png)
+
 
 #### 新建doc04继承doc03 然后删除doc03
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_15-44-56.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_15-44-56.png)
+
 
 **结论：容器之间配置信息的传递，数据卷的生命周期一直持续到没有容器使用它为止**
 
@@ -664,7 +793,7 @@ doc2/doc3 分别在dataVolumeContainer2各自新增内容
 
 http://hub.docker.com/_/centos
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_17-32-12.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_17-32-12.png)
+
 
 ## DockerFile构建过程解析
 
@@ -2931,3 +3060,10 @@ $ sudo docker push registry.cn-shenzhen.aliyuncs.com/ggccqq/mycentos:[镜像版�
 至此Docker基础篇完结
 
  2020-10-4
+
+
+
+
+
+
+
