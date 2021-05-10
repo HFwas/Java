@@ -799,29 +799,42 @@ http://hub.docker.com/_/centos
 
 Dockerfile内容基础知识
 
-1、每条保留字指令都必须为大写字母且后面要跟随至少一个参数 2、 指令按照从.上到下，顺序执行 3、#表示注释 4、每条指令都会创建一个新的镜像层，并对镜像进行提交
+1. 每条保留字指令都必须为大写字母且后面要跟随至少一个参数 
+2. 指令按照从.上到下，顺序执行 
+3. #表示注释 
+4. 每条指令都会创建一个新的镜像层，并对镜像进行提交
 
 ### Docker执行Dockerfile的大致流程
 
-1、 docker 从基础镜像运行一个容器 2、执行一-条指令并对容器作出修改 3、执行类似docker commit的操作提交- -个新的镜像层 4、docker再基 于刚提交的镜像运行一一个新容器 5、执行dockerfile中的 下一条指令直到所有指令都执行完成
+1. docker 从基础镜像运行一个容器 
+2. 执行一-条指令并对容器作出修改 
+3. 执行类似docker commit的操作提交- -个新的镜像层 
+4. docker再基 于刚提交的镜像运行一一个新容器 
+5. 执行dockerfile中的 下一条指令直到所有指令都执行完成
 
 ### 小总结
 
-从应用软件的角度来看，Dockerfile、 Docker镜像与Docker容器分别代表软件的三个不同阶段， Dockerfile是软件的原材料 Docker镜像是软件的交付品 Docker容器则可以认为是软件的运行态。 Dockerfile面向开发，Docker镜 像成为交付标准，Docker容 器则涉及部署与运维，三者缺- -不可，合力充当Docker体系的基石。
+从应用软件的角度来看，Dockerfile、 Docker镜像与Docker容器分别代表软件的三个不同阶段， 
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_17-35-08.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_17-35-08.png)
+- Dockerfile是软件的原材料 
+- Docker镜像是软件的交付品 
+- Docker容器则可以认为是软件的运行态。 
 
-1、Dockerfile，需要定义一个Dockerfile，Dockerfile定 义了进程需要的一切东西。Dockerfile涉 及的内容包括执行代码或者是文件、环境变量、依赖包、运行时环境、动态链接库、操作系统的发行版、服务进程和内核进程(当应用进程需要和系统服务和内核进程打交道，这时需要考虑如何设计namespace的权限控制)等等; 2、Docker镜像，在用Dockerfile定义一文件之后，docker build时会产生- -个Docker镜像，当运行Docker镜像时，会真正开始提供服务; 3、Docker容器，容器是直接提供服务的。
+Dockerfile面向开发，Docker镜像成为交付标准，Docker容器则涉及部署与运维，三者缺一不可，合力充当Docker体系的基石。
+
+![image-20210509230443105](asserts/image-20210509230443105.png)
+
+- Dockerfile，需要定义一个Dockerfile，Dockerfile定 义了进程需要的一切东西。Dockerfile涉 及的内容包括执行代码或者是文件、环境变量、依赖包、运行时环境、动态链接库、操作系统的发行版、服务进程和内核进程(当应用进程需要和系统服务和内核进程打交道，这时需要考虑如何设计namespace的权限控制)等等; 
+- Docker镜像，在用Dockerfile定义一文件之后，docker build时会产生一个Docker镜像，当运行Docker镜像时，会真正开始提供服务; 
+- Docker容器，容器是直接提供服务的。
 
 ## DockerFile体系结构(保留字指令)
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_17-47-26.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_17-47-26.png)
-
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_17-47-58.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_17-47-58.png)
+![image-20210509231503960](asserts/image-20210509231503960.png)
 
 小总结
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_17-48-16.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_17-48-16.png)
+![image-20210509231441505](asserts/image-20210509231441505.png)
 
 ## 案例
 
@@ -829,7 +842,7 @@ Dockerfile内容基础知识
 
 Docker Hub中 99%的镜像都是通过在base镜像中安装和配置需要的软件构建出来的
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_17-52-43.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_17-52-43.png)
+![image-20210509231840458](asserts/image-20210509231840458.png)
 
 ### 自定义镜像mycentos
 
@@ -837,13 +850,15 @@ Docker Hub中 99%的镜像都是通过在base镜像中安装和配置需要的�
 
  Hub默认Centos镜像是什么情况
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_17-53-44.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_17-53-44.png)
+![image-20210509232502106](asserts/image-20210509232502106.png)
+
+![image-20210509232518066](asserts/image-20210509232518066.png)
 
 准备Dockerfile文件
 
 myCentOS内容Dockerfile
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_17-54-40.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_17-54-40.png)
+
 
 ```
 FROM centos
@@ -866,13 +881,13 @@ CMD /bin/bash
 
 docker build -t 新镜像名字:TAG .
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_17-56-15.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_17-56-15.png)
+![image-20210509232949207](asserts/image-20210509232949207.png)
 
 #### 3、运行
 
 docker run -it 新镜像名字:TAG
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_17-57-09.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_17-57-09.png)
+![image-20210509233223392](asserts/image-20210509233223392.png)
 
 #### 4、列出镜像的变更历史
 
@@ -896,11 +911,19 @@ CMD/ENTRYPOINT 镜像案例
 
  Case
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_18-02-41.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_18-02-41.png)
+- 制作CMD版可以查询IP信息的容器
+  - curl命令解释
+    - ![image-20210509233822129](asserts/image-20210509233822129.png)
+- 问题
+  - 如果我们希望显示HTTP头信息，就需要加上-i参数
+  - ![image-20210509234346825](asserts/image-20210509234346825.png)
+- WHY
+  - 我们可以看到可执行文件找不到的报错， executable file not found，之前我们说过，**跟在镜像名后面的是 command，运行时**会替换CMD的默认值。因此这里的-i替换了原来的CMD，而不是添加在原来的curl -s http://ip.cn后面。而-i根本不是命令，所以自然找不到。那么如果我们希望加入这参数，我们就必须重新完整的输入这个命令：
+    $docker run myip curl -s http://ip.cn -i
+- 制作ENTRYPOINT版查询IP信息的容器
+  - ![image-20210509234652901](asserts/image-20210509234652901.png)
 
-制作CMD版可以查询IP信息的容器
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_18-03-11.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_18-03-11.png)
 
 ##### curl的命令解释
 
@@ -914,15 +937,21 @@ WHY
 
 我们可以看到可执行文件找不到的报错，**executable file not found。** 之前我们说过，**跟在镜像名后面的是command,运行时会替换CMD的默认值。** 因此这里的-i替换了原来的CMD，而不是添加在原来的curl -s htp://ip.cn后面。而-i 根本不是命令，所以自然找不到。 那么如果我们希望加入-i这参数，我们就必须重新完整的输入这个命令: **$ docker run myip curl -s [http://ip.cn](http://ip.cn/) -i**
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_18-05-28.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_18-05-28.png)
+
 
 ### 自定义镜像Tomcat
 
 ##### 1、mkdir -p /zzyy/mydockerfile/tomcat9
 
+![image-20210511002628779](asserts/image-20210511002628779.png)
+
 ##### 2、在上述目录下 touch c.txt
 
+![image-20210511002652481](asserts/image-20210511002652481.png)
+
 ##### 3、将jdk和tomcat安装的压缩包拷贝进上一步目录
+
+![image-20210511002855497](asserts/image-20210511002855497.png)
 
 ##### 4、在zzyyuse/mydockerfile/tomcat9目录下新建Dockerfile文件
 
@@ -955,15 +984,19 @@ CMD /usr/local/apache-tomcat-9.0.8/bin/startup.sh && tail -F /usr/local/apache-t
 
 目录内容
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_18-12-29.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_18-12-29.png)
+![image-20210511002841912](asserts/image-20210511002841912.png)
 
 ##### 5、构建
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_18-12-48.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_18-12-48.png)
+
+
+![image-20210511003230540](asserts/image-20210511003230540.png)
+
+![image-20210511003205962](asserts/image-20210511003205962.png)
 
 构建完成
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_18-13-20.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_18-13-20.png)
+![image-20210511003408491](asserts/image-20210511003408491.png)
 
 ##### 6、run
 
@@ -973,7 +1006,7 @@ docker run -d -p 9080:8080 -name myt9
  -v /zzyyuse/mydockerfile/tomcat9/tomcat9logs/:/usrlocal/apache-tomcat-9.0.8/logs -privileged=true zzyytomcat9
 ```
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_18-14-42.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_18-14-42.png)
+
 
 备注
 
@@ -981,11 +1014,13 @@ Docker挂载主机目录Docker访问出现cannot open directory : Permission den
 
 ##### 7、验证
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_18-58-14.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_18-58-14.png)
+![image-20210511003747284](asserts/image-20210511003747284.png)
 
 ##### 8、综合前 述容器卷测试的web服务test发布
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_18-58-56.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_18-58-56.png)
+总体概述：
+
+![image-20210511003958265](asserts/image-20210511003958265.png)
 
 web.xml
 
@@ -1042,7 +1077,7 @@ welcome-
 
 ## 小总结
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-03_19-00-48.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-03_19-00-48.png)
+![image-20210511004322306](asserts/image-20210511004322306.png)
 
 # 第 七 章 Docker常用安装
 
@@ -1060,15 +1095,19 @@ welcome-
 >
 > 移除容器
 
+### 安装Tomcat
+
+不讲，之前做过了的
+
 ### 安装Mysql
 
 #### docker hub 上查找mysql镜像
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-04_11-38-56.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-04_11-38-56.png)
+![image-20210511004821972](asserts/image-20210511004821972.png)
 
 #### 从 docker hub(阿里云加速器)拉取mysql镜像到本地标签为5.6
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-04_11-40-13.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-04_11-40-13.png)
+![image-20210511005049315](asserts/image-20210511005049315.png)
 
 #### 使用mysql5.6镜像创建容器(也叫运行镜像)
 
@@ -1096,17 +1135,17 @@ docker exec -it Mysql运行成功后的容器ID /bin/bash
 docker exec mysql服务容器ID sh -c 'exec mysqldump --all-databases -uroot -p"123456"' >/ggcc/all-database.sql
 ```
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-04_11-59-32.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-04_11-59-32.png)
+
 
 #### 数据备份测试
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-04_12-02-59.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-04_12-02-59.png)
+
 
 ### 安装Redis
 
 #### 从docker hu上(阿里云加速器)拉取redis镜像到本地标签为：3.2
 
-[![img](https://github.com/gcq9527/Java-Learning-materials/raw/master/Snipaste_2020-10-04_12-05-08.png)](https://github.com/gcq9527/Java-Learning-materials/blob/master/Snipaste_2020-10-04_12-05-08.png)
+
 
 #### 使用redis3.2镜像创建容器(也叫运行镜像)
 
