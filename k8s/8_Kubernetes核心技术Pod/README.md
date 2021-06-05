@@ -218,7 +218,7 @@ kubectl describe node k8smaster | grep Taint
 - PreferNoSchedule：尽量不被调度【也有被调度的几率】
 - NoExecute：不会调度，并且还会驱逐Node已有Pod
 
-### 未节点添加污点
+### 为节点添加污点
 
 ```bash
 kubectl taint node [node] key=value:污点的三个值

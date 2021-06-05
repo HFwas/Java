@@ -88,7 +88,7 @@ ConfigMap作用是存储不加密的数据到etcd中，让Pod以变量或数据�
 
 ```bash
 redis.port=127.0.0.1
-redis.port=6379
+redis.port=6379	
 redis.password=123456
 ```
 
