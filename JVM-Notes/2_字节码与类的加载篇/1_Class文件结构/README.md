@@ -1,3 +1,5 @@
+[toc]
+
 # Class文件结构
 
 ## 概述
@@ -392,8 +394,9 @@ com/ atguigu/test/Dem这个就是类的全限定名，仅仅是把包名的”."
   - **如果没有设置 ACC_INTERFACE标志，那么这个class文件可以具有上表中除ACC_ ANNOTATION外的其他所有标志。当然，ACC_ FINAL和ACC_ABSTRACT这类互斥的标志除外。这两个标志不得同时设置。**
 
 - ACC_ SUPER标志用于确定类或接口里面的 invokespeciaL指令使用的是哪一种执行语义。**针对Java虚拟机指令集的编译器都应当设置这个标志**。对于java se8及后续版本来说，无论class文件中这个标志的实际值是什么，也不管class文件的版本号是多少，Java虚拟机都认为每个class文件均设置了 ACC_SUPER标志
-  - **ACC_SUPER标志是为了向后兼容由旧java编译器所编译的代码而设计的。目前的 ACC_SUPER标志在由JDK1.0.2之前的编译器所生成的 access_flags中是没有确定含义的，如果设置了该标志，那么 Oracle的Java虚拟机实现会将其忽略**
-
+  
+- **ACC_SUPER标志是为了向后兼容由旧java编译器所编译的代码而设计的。目前的 ACC_SUPER标志在由JDK1.0.2之前的编译器所生成的 access_flags中是没有确定含义的，如果设置了该标志，那么 Oracle的Java虚拟机实现会将其忽略**
+  
 - ACC_SYNTHETIC标志意味着该类或接口是由编译器生成的，而不是由源代码生成的。
 - 注解类型必须设置 ACC_ANNOTATION标志。如果设置了 ACC_ANNOTATION标志，那么也必须设置 ACC_INTERFACE标志。
 
