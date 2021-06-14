@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class JobTest {
 
+
 //    @Scheduled(fixedRate = 1000L)
     @Scheduled(cron = "0/1 * * * * *")
 //    @Scheduled(fixedDelay = 8989L)
