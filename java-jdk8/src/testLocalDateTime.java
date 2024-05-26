@@ -1,5 +1,3 @@
-package com.example.java8test.time.api;
-
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;

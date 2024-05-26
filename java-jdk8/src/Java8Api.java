@@ -1,10 +1,8 @@
-package com.example.java8test.time.api;
-
 import java.time.*;
 
 /**
  * @Author HFwas
- * @see {@link java.time.Instant,java.time.LocalDateTime,java.time.LocalDate,java.time.LocalTime,}
+ * @see {@link Instant, LocalDateTime, LocalDate, LocalTime,}
  * @Date 2022/2/11 9:28
  */
 public class Java8Api {

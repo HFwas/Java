@@ -1,5 +1,3 @@
-package com.example.java8test.time.api;
-
 import java.time.Instant;
 
 /**
