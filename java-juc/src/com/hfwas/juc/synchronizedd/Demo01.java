@@ -1,6 +1,4 @@
-package com.hfwas.juc.
-
-import com.sun.org.apache.bcel.internal.generic.NEW;
+package com.hfwas.juc.synchronizedd;
 
 /**
  * @Auther: HFwas

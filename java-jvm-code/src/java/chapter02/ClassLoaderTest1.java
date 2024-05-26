@@ -12,7 +12,7 @@ import java.security.Provider;
 public class ClassLoaderTest1 {
     public static void main(String[] args) {
         System.out.println("*********启动类加载器************");
-        // 获取BootstrapClassLoader 能够加载的API的路径
+        // 获取 BootstrapClassLoader 能够加载的API的路径
         URL[] urls = sun.misc.Launcher.getBootstrapClassPath().getURLs();
         for (URL url : urls) {
             System.out.println(url.toExternalForm());

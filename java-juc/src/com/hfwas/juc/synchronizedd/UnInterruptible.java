@@ -1,4 +1,4 @@
-package com.hfwas.juc.
+package com.hfwas.juc.synchronizedd;
 
 /**
  * @Auther: HFwas
@@ -11,7 +11,7 @@ package com.hfwas.juc.
  * 5.停止第二个线程
  * @version: 1.0
  */
-public class UnInterruptible {
+class UnInterruptible {
 
     private  static  Object obj = new Object();
 

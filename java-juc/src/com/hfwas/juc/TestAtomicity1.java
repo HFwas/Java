@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * @Description: 验证线程的原子性问题
  * @version: 1.0
  */
-public class TestAtomicity {
+class TestAtomicity {
     //1.定义一个共享变量number
     private static int number = 0;
     public static void main(String[] args) throws InterruptedException {

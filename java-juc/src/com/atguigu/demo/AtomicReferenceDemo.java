@@ -1,7 +1,5 @@
 package com.atguigu.demo;
 
-import javax.jws.soap.SOAPBinding;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
 class User{

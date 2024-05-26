@@ -1,5 +1,4 @@
-package com.hfwas.juc.
-
+package com.hfwas.juc.synchronizedd;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

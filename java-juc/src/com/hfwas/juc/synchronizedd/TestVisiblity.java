@@ -1,6 +1,4 @@
-package com.hfwas.juc.
-
-import org.omg.Messaging.SyncScopeHelper;
+package com.hfwas.juc.synchronizedd;
 
 /**
  * @Auther: HFwas
