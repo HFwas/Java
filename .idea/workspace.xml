@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="41383fc8-cca6-4962-b03c-27e93b93d0b1" name="Default Changelist" comment="update code">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;HFwas&quot;
+  }
+}</component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="master" />
+      </list>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/HFwas/Java.git&quot;,
+    &quot;accountId&quot;: &quot;a61d8f99-de50-4c55-9d89-d10929bae4bc&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="customMavenHome" value="$PROJECT_DIR$/../../apache-maven-3.8.1" />
+        <option name="localRepository" value="$PROJECT_DIR$/../../repository" />
+        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
+        <option name="userSettingsFile" value="$PROJECT_DIR$/../../apache-maven-3.8.1/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2509XSB5sWxH5qMHf4p1n9HF6wL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.CyclicBarrierDemo.executor": "Debug",
+    "Application.Demo01.executor": "Debug",
+    "Application.Demo02.executor": "Debug",
+    "Application.Main.executor": "Debug",
+    "Application.Main2.executor": "Debug",
+    "Application.SemaphoreDemo.executor": "Debug",
+    "Application.TestAtomicity.executor": "Debug",
+    "Application.TestVisiblity.executor": "Debug",
+    "Application.UnInterruptible.executor": "Debug",
+    "Application.com.hfwas.juc.synchronizedd.TestAtomicity.executor": "Debug",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/usr/local/workspace/Java/java-jdk8/src",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/java-jdk8/src" />
+      <recent name="$PROJECT_DIR$/java-juc/src" />
+      <recent name="$PROJECT_DIR$/sort/src" />
+      <recent name="$PROJECT_DIR$/java-io" />
+      <recent name="$PROJECT_DIR$/java-io/src" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Demo02">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CyclicBarrierDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.demo.CyclicBarrierDemo" />
+      <module name="java-juc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atguigu.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Demo01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hfwas.juc.synchronizedd.Demo01" />
+      <module name="java-juc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hfwas.juc.synchronizedd.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Demo02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hfwas.juc.synchronizedd.Demo02" />
+      <module name="java-juc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hfwas.juc.synchronizedd.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SemaphoreDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.demo.SemaphoreDemo" />
+      <module name="java-juc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atguigu.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.hfwas.juc.synchronizedd.TestAtomicity" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hfwas.juc.synchronizedd.TestAtomicity" />
+      <module name="java-juc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hfwas.juc.synchronizedd.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hfwas.demo.DemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Demo02" />
+        <item itemvalue="Application.Demo01" />
+        <item itemvalue="Application.CyclicBarrierDemo" />
+        <item itemvalue="Application.SemaphoreDemo" />
+        <item itemvalue="Application.com.hfwas.juc.synchronizedd.TestAtomicity" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="41383fc8-cca6-4962-b03c-27e93b93d0b1" name="Default Changelist" comment="" />
+      <created>1644653176043</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1644653176043</updated>
+      <workItem from="1644653177939" duration="1129000" />
+      <workItem from="1716690361201" duration="2255000" />
+      <workItem from="1716697469853" duration="7856000" />
+      <workItem from="1716906422670" duration="2073000" />
+    </task>
+    <task id="LOCAL-00001" summary="ref://javase project refractor">
+      <created>1644653557508</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1644653557508</updated>
+    </task>
+    <task id="LOCAL-00002" summary="juc thread">
+      <option name="closed" value="true" />
+      <created>1716697156936</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716697156936</updated>
+    </task>
+    <task id="LOCAL-00003" summary="juc thread">
+      <option name="closed" value="true" />
+      <created>1716707271708</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1716707271708</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add java code">
+      <option name="closed" value="true" />
+      <created>1716707517778</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1716707517778</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add java code">
+      <option name="closed" value="true" />
+      <created>1716708214591</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1716708214591</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add java code">
+      <option name="closed" value="true" />
+      <created>1716708931088</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716708931088</updated>
+    </task>
+    <task id="LOCAL-00007" summary="refecator code">
+      <option name="closed" value="true" />
+      <created>1716713296717</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1716713296717</updated>
+    </task>
+    <task id="LOCAL-00008" summary="remove code and doc">
+      <option name="closed" value="true" />
+      <created>1716713607450</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1716713607450</updated>
+    </task>
+    <task id="LOCAL-00009" summary="update code">
+      <option name="closed" value="true" />
+      <created>1716716388377</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1716716388377</updated>
+    </task>
+    <task id="LOCAL-00010" summary="update code">
+      <option name="closed" value="true" />
+      <created>1716716499644</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1716716499644</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ref://javase project refractor" />
+    <MESSAGE value="juc thread" />
+    <MESSAGE value="add java code" />
+    <MESSAGE value="refecator code" />
+    <MESSAGE value="remove code and doc" />
+    <MESSAGE value="update code" />
+    <option name="LAST_COMMIT_MESSAGE" value="update code" />
+  </component>
+</project>
