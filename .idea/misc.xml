@@ -6,6 +6,9 @@
       <list>
         <option value="$PROJECT_DIR$/demo/pom.xml" />
         <option value="$PROJECT_DIR$/servlet/pom.xml" />
+        <option value="$PROJECT_DIR$/redis-consumer-01/pom.xml" />
+        <option value="$PROJECT_DIR$/redis-consumer-02/pom.xml" />
+        <option value="$PROJECT_DIR$/redis-pub-sub/pom.xml" />
       </list>
     </option>
   </component>

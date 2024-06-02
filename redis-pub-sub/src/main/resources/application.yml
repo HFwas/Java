@@ -1,0 +1,7 @@
+spring:
+  redis:
+    port: 6379
+    database: 10
+    password: Ab123456
+server:
+  port: 8089
