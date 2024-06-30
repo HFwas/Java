@@ -4,23 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41383fc8-cca6-4962-b03c-27e93b93d0b1" name="Default Changelist" comment="add .idea">
-      <change afterPath="$PROJECT_DIR$/redis-consumer-01/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redis-consumer-01/src/main/java/org/example/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redis-consumer-01/src/test/java/org/example/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redis-consumer-02/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redis-consumer-02/src/main/java/org/example/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redis-consumer-02/src/main/java/org/example/listener/RedisListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redis-consumer-02/src/test/java/org/example/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redis-pub-sub/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redis-pub-sub/src/main/java/org/example/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redis-pub-sub/src/main/java/org/example/config/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redis-pub-sub/src/main/java/org/example/controller/RedisPubSubController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redis-pub-sub/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redis-pub-sub/src/test/java/org/example/AppTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="41383fc8-cca6-4962-b03c-27e93b93d0b1" name="Default Changelist" comment="redis">
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,57 +65,57 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.CyclicBarrierDemo.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.Demo01.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.Demo02.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.Main2.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.SemaphoreDemo.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.TestAtomicity.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.TestVisiblity.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.UnInterruptible.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.com.hfwas.juc.synchronizedd.TestAtomicity.executor&quot;: &quot;Debug&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;HTTP Request.generated-requests | #1.executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.App (1).executor&quot;: &quot;Debug&quot;,
-    &quot;Spring Boot.App.executor&quot;: &quot;Debug&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;azul-11&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/usr/local/workspace/Java/java-jdk8/src&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.CyclicBarrierDemo.executor": "Debug",
+    "Application.Demo01.executor": "Debug",
+    "Application.Demo02.executor": "Debug",
+    "Application.Main.executor": "Debug",
+    "Application.Main2.executor": "Debug",
+    "Application.SemaphoreDemo.executor": "Debug",
+    "Application.TestAtomicity.executor": "Debug",
+    "Application.TestVisiblity.executor": "Debug",
+    "Application.UnInterruptible.executor": "Debug",
+    "Application.com.hfwas.juc.synchronizedd.TestAtomicity.executor": "Debug",
+    "Downloaded.Files.Path.Enabled": "false",
+    "HTTP Request.generated-requests | #1.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.App (1).executor": "Debug",
+    "Spring Boot.App.executor": "Debug",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "azul-11",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/usr/local/workspace/Java",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/java-jdk8/src" />
       <recent name="$PROJECT_DIR$/java-juc/src" />
       <recent name="$PROJECT_DIR$/sort/src" />
       <recent name="$PROJECT_DIR$/java-io" />
-      <recent name="$PROJECT_DIR$/java-io/src" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
@@ -240,7 +225,7 @@
       <workItem from="1716690361201" duration="2255000" />
       <workItem from="1716697469853" duration="7856000" />
       <workItem from="1716906422670" duration="3854000" />
-      <workItem from="1717327427444" duration="330000" />
+      <workItem from="1717327427444" duration="1332000" />
     </task>
     <task id="LOCAL-00001" summary="ref://javase project refractor">
       <created>1644653557508</created>
@@ -329,7 +314,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717245208582</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="redis">
+      <option name="closed" value="true" />
+      <created>1717327762035</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1717327762035</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,7 +347,8 @@
     <MESSAGE value="remove code and doc" />
     <MESSAGE value="update code" />
     <MESSAGE value="add .idea" />
-    <option name="LAST_COMMIT_MESSAGE" value="add .idea" />
+    <MESSAGE value="redis" />
+    <option name="LAST_COMMIT_MESSAGE" value="redis" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
